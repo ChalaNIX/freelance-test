@@ -30,7 +30,7 @@ public class CommentController {
         Response response = new OkHttpClient().newCall(request).execute();
 
         if (!response.isSuccessful()) {
-            throw new ApiException(response.code(), "Cannot create comment for job with ID " + jobId);
+            throw new ApiException(response.code(), "Cannot create comment for job with ID " + jobId, response.body().string());
         }
 
         return gson.fromJson(response.body().string(), Comment.class);
@@ -47,7 +47,7 @@ public class CommentController {
         Response response = new OkHttpClient().newCall(request).execute();
 
         if (!response.isSuccessful()) {
-            throw new ApiException(response.code(), "Cannot create comment for job with ID " + jobId);
+            throw new ApiException(response.code(), "Cannot create comment for job with ID " + jobId, response.body().string());
         }
 
         String body = response.body().string();

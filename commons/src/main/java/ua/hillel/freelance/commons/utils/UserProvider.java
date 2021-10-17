@@ -1,4 +1,4 @@
-package ua.hillel.freelance.api.utils;
+package ua.hillel.freelance.commons.utils;
 
 import com.github.javafaker.Faker;
 import ua.hillel.freelance.commons.entity.User;
@@ -6,18 +6,18 @@ import ua.hillel.freelance.commons.entity.User;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataProvider {
-    private static DataProvider instance;
+public class UserProvider {
+    private static UserProvider instance;
 
     List<User> users;
 
-    private DataProvider() {
+    private UserProvider() {
         users = new ArrayList<>();
     }
 
-    public static DataProvider getInstance() {
+    public static UserProvider getInstance() {
         if (instance == null) {
-            instance = new DataProvider();
+            instance = new UserProvider();
         }
         return instance;
     }

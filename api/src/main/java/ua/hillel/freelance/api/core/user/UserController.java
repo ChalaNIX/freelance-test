@@ -27,7 +27,7 @@ public class UserController {
         Response response = client.newCall(request).execute();
 
         if (!response.isSuccessful()) {
-            throw new ApiException(response.code(), "Cannot get current user info");
+            throw new ApiException(response.code(), "Cannot get current user info", response.body().string());
         }
 
         return new Gson().fromJson(response.body().string(), User.class);
@@ -46,7 +46,7 @@ public class UserController {
         Response response = client.newCall(request).execute();
 
         if (!response.isSuccessful()) {
-            throw new ApiException(response.code(), "Cannot get user info by ID " + userId);
+            throw new ApiException(response.code(), "Cannot get user info by ID " + userId, response.body().string());
         }
 
         return new Gson().fromJson(response.body().string(), User.class);
@@ -73,7 +73,7 @@ public class UserController {
         Response response = client.newCall(request).execute();
 
         if (!response.isSuccessful()) {
-            throw new ApiException(response.code(), "Cannot update user");
+            throw new ApiException(response.code(), "Cannot update user", response.body().string());
         }
 
         return new Gson().fromJson(response.body().string(), User.class);

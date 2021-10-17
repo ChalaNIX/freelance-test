@@ -31,7 +31,7 @@ public class JobController {
         Response response = new OkHttpClient().newCall(request).execute();
 
         if (!response.isSuccessful()) {
-            throw new ApiException(response.code(), "Cannot create job");
+            throw new ApiException(response.code(), "Cannot create job", response.body().string());
         }
 
         return gson.fromJson(response.body().string(), Job.class);
@@ -48,7 +48,7 @@ public class JobController {
         Response response = new OkHttpClient().newCall(request).execute();
 
         if (!response.isSuccessful()) {
-            throw new ApiException(response.code(), "Cannot create job by ID " + jobId);
+            throw new ApiException(response.code(), "Cannot create job by ID " + jobId, response.body().string());
         }
 
         return new Gson().fromJson(response.body().string(), Job.class);
@@ -65,7 +65,7 @@ public class JobController {
         Response response = new OkHttpClient().newCall(request).execute();
 
         if (!response.isSuccessful()) {
-            throw new ApiException(response.code(), "Cannot get list of jobs");
+            throw new ApiException(response.code(), "Cannot get list of jobs", response.body().string());
         }
 
         return new Gson().fromJson(response.body().string(), new TypeToken<List<Job>>(){}.getType());
@@ -82,7 +82,7 @@ public class JobController {
         Response response = new OkHttpClient().newCall(request).execute();
 
         if (!response.isSuccessful()) {
-            throw new ApiException(response.code(), "Cannot get list of jobs for current user");
+            throw new ApiException(response.code(), "Cannot get list of jobs for current user", response.body().string());
         }
 
         return new Gson().fromJson(response.body().string(), new TypeToken<List<Job>>(){}.getType());
@@ -102,7 +102,7 @@ public class JobController {
         Response response = new OkHttpClient().newCall(request).execute();
 
         if (!response.isSuccessful()) {
-            throw new ApiException(response.code(), "Cannot delete job by ID " + jobId);
+            throw new ApiException(response.code(), "Cannot delete job by ID " + jobId, response.body().string());
         }
 
         return new JSONObject(response.body().string()).get("message").toString();

@@ -47,7 +47,7 @@
                 <version>3.0.0-M5</version>
                 <configuration>
                     <systemProperties>
-                        <url>${url}</url>
+                        <apiUrl>${apiUrl}</apiUrl>
                     </systemProperties>
                     <suiteXmlFiles>
                         <suiteXmlFile>${basedir}/src/test/resources/testng.xml</suiteXmlFile>

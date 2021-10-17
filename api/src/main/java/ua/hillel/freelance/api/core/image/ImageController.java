@@ -29,7 +29,7 @@ public class ImageController {
         Response response = new OkHttpClient().newCall(request).execute();
 
         if (!response.isSuccessful()) {
-            throw new ApiException(response.code(), "Cannot upload image");
+            throw new ApiException(response.code(), "Cannot upload image", response.body().string());
         }
 
         return new JSONObject(response.body().string()).get("message").toString();
@@ -46,7 +46,7 @@ public class ImageController {
         Response response = new OkHttpClient().newCall(request).execute();
 
         if (!response.isSuccessful()) {
-            throw new ApiException(response.code(), "Cannot upload image");
+            throw new ApiException(response.code(), "Cannot upload image", response.body().string());
         }
 
         return new Gson().fromJson(response.body().string(), Image.class);

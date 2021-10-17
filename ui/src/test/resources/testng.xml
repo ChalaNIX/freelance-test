@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Freelance API test suite">
+    <test name="Api Test">
+        <classes>
+            <class name="ua.hillel.freelance.ui.tests.AuthTest"/>
+            <class name="ua.hillel.freelance.ui.tests.FL_UC_001"/>
+            <class name="ua.hillel.freelance.ui.tests.FL_UC_002"/>
+            <class name="ua.hillel.freelance.ui.tests.FL_UC_003"/>
+            <class name="ua.hillel.freelance.ui.tests.FL_UC_004"/>
+        </classes>
+    </test>
+</suite>

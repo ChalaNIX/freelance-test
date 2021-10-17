@@ -30,7 +30,7 @@ public class AuthController {
         Response response = client.newCall(request).execute();
 
         if (!response.isSuccessful()) {
-            throw new ApiException(response.code(), "User registration failed");
+            throw new ApiException(response.code(), "User registration failed", response.body().string());
         }
     }
 
@@ -53,7 +53,7 @@ public class AuthController {
         Response response = client.newCall(request).execute();
 
         if (!response.isSuccessful()) {
-            throw new ApiException(response.code(), "User login failed");
+            throw new ApiException(response.code(), "User login failed", response.body().string());
         }
 
         return new JSONObject(response.body().string()).get("token").toString();
