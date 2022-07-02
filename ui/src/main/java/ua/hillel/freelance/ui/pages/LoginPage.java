@@ -10,8 +10,8 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage extends BasePage {
     private final SelenideElement loginPageWrapper = $(".login-page");
-    private final SelenideElement usernameInput = loginPageWrapper.$("input[ng-reflect-name='username']");
-    private final SelenideElement passwordInput = loginPageWrapper.$("input[ng-reflect-name='password']");
+    private final SelenideElement usernameInput = loginPageWrapper.$("input[formcontrolname='username']");
+    private final SelenideElement passwordInput = loginPageWrapper.$("input[formcontrolname='password']");
     private final SelenideElement loginButton = loginPageWrapper.$("button");
     private final SelenideElement registerLink = loginPageWrapper.$(By.linkText("Register"));
 

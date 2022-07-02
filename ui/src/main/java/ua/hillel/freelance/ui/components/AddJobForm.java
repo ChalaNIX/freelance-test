@@ -10,9 +10,9 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class AddJobForm extends BasePage {
     private final SelenideElement addJobWrapper = $("app-add-job");
-    private final SelenideElement titleInput = addJobWrapper.$("input[ng-reflect-name='title']");
-    private final SelenideElement descTextarea = addJobWrapper.$("textarea[ng-reflect-name='description']");
-    private final SelenideElement priceInput = addJobWrapper.$("input[ng-reflect-name='price']");
+    private final SelenideElement titleInput = addJobWrapper.$("input[formcontrolname='title']");
+    private final SelenideElement descTextarea = addJobWrapper.$("textarea[formcontrolname='description']");
+    private final SelenideElement priceInput = addJobWrapper.$("input[formcontrolname='price']");
     private final SelenideElement addJobButton = addJobWrapper.$("form button");
 
     public AddJobForm() {

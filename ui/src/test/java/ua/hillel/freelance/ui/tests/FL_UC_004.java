@@ -61,7 +61,7 @@ public class FL_UC_004 extends BaseTest {
                 "Job should have comment");
 
         myJobs.deleteJob(job.getTitle());
-
+        wait(2);
         Assert.assertFalse(myJobs.isJobDisplayed(job.getTitle()),
                 "Job should be deleted");
     }

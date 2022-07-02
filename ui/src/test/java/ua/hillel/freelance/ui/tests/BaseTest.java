@@ -70,4 +70,10 @@ public class BaseTest {
     public byte[] saveScreenshot(byte[] screenShot) {
         return screenShot;
     }
+
+    public void wait(int duration) {
+        try {
+            Thread.sleep(duration*1000);
+        } catch (InterruptedException e) {}
+    }
 }

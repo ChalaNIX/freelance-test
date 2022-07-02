@@ -10,16 +10,16 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class RegisterPage extends BasePage {
     private final SelenideElement registerPageWrapper = $(".register-page");
-    private final SelenideElement usernameInput = registerPageWrapper.$("input[ng-reflect-name='username']");
-    private final SelenideElement nameInput = registerPageWrapper.$("input[ng-reflect-name='name']");
-    private final SelenideElement lastnameInput = registerPageWrapper.$("input[ng-reflect-name='lastname']");
-    private final SelenideElement passwordInput = registerPageWrapper.$("input[ng-reflect-name='password']");
-    private final SelenideElement confirmPasswordInput = registerPageWrapper.$("input[ng-reflect-name='confirmPassword']");
+    private final SelenideElement usernameInput = registerPageWrapper.$("input[formcontrolname='username']");
+    private final SelenideElement nameInput = registerPageWrapper.$("input[formcontrolname='name']");
+    private final SelenideElement lastnameInput = registerPageWrapper.$("input[formcontrolname='lastname']");
+    private final SelenideElement passwordInput = registerPageWrapper.$("input[formcontrolname='password']");
+    private final SelenideElement confirmPasswordInput = registerPageWrapper.$("input[formcontrolname='confirmPassword']");
     private final SelenideElement registerButton = registerPageWrapper.$("button");
     private final SelenideElement signInLink = registerPageWrapper.$(By.linkText("Sign In"));
 
     public RegisterPage() {
-        registerPageWrapper.shouldBe(Condition.exist);
+        registerPageWrapper.should(Condition.exist);
     }
 
     @Step("Set username")

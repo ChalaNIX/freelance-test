@@ -10,8 +10,8 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class EditUserInfoDialog extends BasePage {
     private final SelenideElement dialogWrapper = $("mat-dialog-container");
-    private final SelenideElement editUserNameInput = dialogWrapper.$("input[ng-reflect-name='name']");
-    private final SelenideElement editUserLastnameInput = dialogWrapper.$("input[ng-reflect-name='lastname']");
+    private final SelenideElement editUserNameInput = dialogWrapper.$("input[formcontrolname='name']");
+    private final SelenideElement editUserLastnameInput = dialogWrapper.$("input[formcontrolname='lastname']");
     private final SelenideElement cancelEditButton = dialogWrapper.$("button.mat-button-base:not(.mat-primary)");
     private final SelenideElement updateEditButton = dialogWrapper.$("button.mat-primary");
 

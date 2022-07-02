@@ -16,7 +16,7 @@ public class ImageController {
         RequestBody requestBody = new MultipartBody.Builder()
                 .setType(MultipartBody.FORM)
                 .addFormDataPart("file", file.getName(),
-                        RequestBody.create(MediaType.parse("image/jpeg"), file))
+                        RequestBody.create(file, MediaType.parse("image/jpeg")))
                 .build();
 
         Request request = new Request.Builder()

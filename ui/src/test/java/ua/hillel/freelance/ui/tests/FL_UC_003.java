@@ -50,6 +50,7 @@ public class FL_UC_003 extends BaseTest {
                 .viewJobDetails(job.getTitle())
                 .leaveComment(comment);
 
+        wait(2);
         Assert.assertEquals(jobDetailPage.getNumberOfComments(), 1,
                 "Comment should be displayed");
         Assert.assertEquals(jobDetailPage.getComment(1), comment,
